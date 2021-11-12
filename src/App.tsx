@@ -2,6 +2,7 @@ import { SideBar } from './components/SideBar';
 import { Content } from './components/Content';
 
 import './styles/global.scss';
+import { useState } from 'react';
 
 export interface GenreResponseProps {
   id: number;
@@ -10,12 +11,13 @@ export interface GenreResponseProps {
 }
 
 export function App() { 
+  const [selectedGenreId, setSelectedGenreId] = useState(1);
 
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
-      <SideBar />
+      <SideBar selectedGenreId={selectedGenreId} setSelectedGenreId={setSelectedGenreId} />
 
-      <Content />
+      <Content selectedGenreId={selectedGenreId} />
     </div>
   )
 }

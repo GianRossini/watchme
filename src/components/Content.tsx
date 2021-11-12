@@ -6,6 +6,10 @@ import "../styles/content.scss";
 import { GenreResponseProps } from "../App";
 import { MovieCard } from "./MovieCard";
 
+interface ContentProps {
+  selectedGenreId: number
+}
+
 interface MovieProps {
   imdbID: string;
   Title: string;
@@ -17,7 +21,7 @@ interface MovieProps {
   Runtime: string;
 }
 
-export function Content(selectedGenreId: number) {
+export function Content({ selectedGenreId }: ContentProps) {
   // Complete aqui
   const [movies, setMovies] = useState<MovieProps[]>([]);
 

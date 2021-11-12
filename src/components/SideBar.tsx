@@ -8,10 +8,13 @@ import '../styles/sidebar.scss';
 
 import { GenreResponseProps } from "../App";
 
-export function SideBar() {
-  // Complete aqui
-  const [selectedGenreId, setSelectedGenreId] = useState(1);
+interface SideBarProps {
+  selectedGenreId: number,
+  setSelectedGenreId: (newGenreId: number) => void;
+}
 
+export function SideBar({ selectedGenreId, setSelectedGenreId }: SideBarProps) {
+  // Complete aqui
   const [genres, setGenres] = useState<GenreResponseProps[]>([]);
 
   useEffect(() => {
